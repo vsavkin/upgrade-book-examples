@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {Component, NgModule} from '@angular/core';
-import {ActivatedRoute, RouterModule} from '@angular/router';
+import {ActivatedRoute, PreloadAllModules, RouterModule} from '@angular/router';
 
 /**
  * This component implements the sibling outlets strategy.
@@ -55,7 +55,11 @@ export class AngularBComponent {
       {path: 'angular_a', component: AngularAComponent},
       {path: 'angular_b', component: AngularBComponent},
       {path: '', loadChildren: './angularjs.module#AngularJSModule'}
-    ], { enableTracing: true })
+    ], {
+      enableTracing: true,
+      // Uncomment to enable preloading and prebootstrapping
+      // preloadingStrategy: PreloadAllModules
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

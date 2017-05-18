@@ -34,13 +34,15 @@ module.config(($locationProvider, $stateProvider) => {
     `
   });
 
-  $stateProvider.state('empty', {
+  $stateProvider.state('sink', {
     url: '/*path',
     template: ''
   });
 });
 
 module.run(($rootScope) => {
+  console.log('Running AngularJS application');
+
   $rootScope.$on('$stateChangeStart', (e, toState, toParams) => {
     console.log('$stateChangeStart', toState, toParams);
   });
