@@ -28,4 +28,24 @@ describe('Test Downgraded Components', () => {
     $rootScope.$digest();
     expect(element.html()).toContain('afterClick');
   });
+
+  it('should show and hide the dialog', () => {
+    const element = $compile('<show-dialog></show-dialog>')($rootScope);
+
+    $rootScope.$digest();
+
+    expect(element.html()).not.toContain('Ok');
+
+    element[0].querySelector('button').click();
+
+    $rootScope.$digest();
+
+    expect(element.html()).toContain('Ok');
+
+    element[0].querySelector('.btn-primary').click();
+
+    $rootScope.$digest();
+
+    expect(element.html()).not.toContain('Ok');
+  });
 });
