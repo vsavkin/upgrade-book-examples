@@ -5,7 +5,7 @@ declare const angular: any;
 
 export const module = angular.module('AngularJSApp', ['ui.router']);
 
-module.config(($locationProvider, $stateProvider) => {
+module.config(['$locationProvider', '$stateProvider', ($locationProvider, $stateProvider) => {
   $locationProvider.html5Mode(true);
 
   $stateProvider.state('angularjs_a', {
@@ -38,12 +38,12 @@ module.config(($locationProvider, $stateProvider) => {
     url: '/*path',
     template: ''
   });
-});
+}]);
 
-module.run(($rootScope) => {
+module.run(['$rootScope', ($rootScope) => {
   console.log('Running AngularJS application');
 
   $rootScope.$on('$stateChangeStart', (e, toState, toParams) => {
     console.log('$stateChangeStart', toState, toParams);
   });
-});
+}]);
