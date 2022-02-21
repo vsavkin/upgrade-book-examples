@@ -2,6 +2,10 @@
   "name": "mixing-components",
   "version": "0.0.0",
   "license": "MIT",
+  "engines": {
+    "node": "^16.14.0",
+    "npm": "^8.3.1"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
