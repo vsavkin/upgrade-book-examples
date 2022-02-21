@@ -107,23 +107,19 @@ m.directive('angularComponent', downgradeComponent({ component: AngularComponent
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AngularJSComponent,
-    AngularComponent
-  ],
-  entryComponents: [
-    AppComponent,
-    AngularComponent
-  ],
-  imports: [
-    BrowserModule,
-    UpgradeModule
-  ],
-  providers: [
-    { provide: '$scope', useExisting: '$rootScope' }
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        AngularJSComponent,
+        AngularComponent
+    ],
+    imports: [
+        BrowserModule,
+        UpgradeModule
+    ],
+    providers: [
+        { provide: '$scope', useExisting: '$rootScope' }
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor(private upgrade: UpgradeModule) {
