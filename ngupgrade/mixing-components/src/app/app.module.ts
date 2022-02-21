@@ -41,11 +41,11 @@ const m = angular.module('AngularJsModule', []);
     <div style="background-color: lightblue; padding: 10px; margin: 10px;">
       <h3>AppComponent written in Angular and downgraded to AngularJS</h3>
       <div>counter {{counter}}</div>
-      <angularjs-component [counterTimes2]="counter * 2" (multiply)="multiplyCounter($event)" 
+      <angularjs-component [counterTimes2]="counter * 2" (multiply)="multiplyCounter($event)"
                            [(twoWay)]="counter">
         Projected from parent: {{counter}}
       </angularjs-component>
-    </div>  
+    </div>
   `
 })
 export class AppComponent {
